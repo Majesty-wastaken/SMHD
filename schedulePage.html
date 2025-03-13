@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMHD - Schedule</title>
+    <link rel="stylesheet" href="./css/navStyle.css">
+    <link rel="stylesheet" href="./css/schedulePageStyle.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+</head>
+
+<body>
+
+    <header id="navigation">
+
+        <nav id="navbar">
+
+            <h1><a href="index.html" id="logo">SMHD</a></h1>
+
+            <ul class="tabList">
+                <li class="firTabs"><a href="./index.html" class="tab">Home</a></li>
+                <li class="firTabs"><a href="./aboutPage.html" class="tab">About</a></li>
+                <li class="firTabs"><a href="./schedulePage.html" class="tab">Schedule</a></li>
+                <li class="btnAAwidth"><a href="./availActivPage.html" class="tab btnAA">
+                    <span class="availableWhole"><i class="fa-solid fa-a"></i><span class="availablePiece">vailable</span></span>
+                    <span class="activitiesWhole"><i class="fa-solid fa-a"></i><span class="activitiesPiece">ctivities</span></span>
+                </a></li>
+            </ul>
+
+            <ul class="userSide">
+                <li id="themeBtn" class="dropdownBtn"><a class="tab"><i class="fa-regular fa-window-restore"></i><span>Theme</span></a>
+                    <ul class="dropdownMenu">
+                        <li>
+                            <a class="lt-rd" onclick="Theme('lightRed')">light red</a>
+                            <a class="lt-gn" onclick="Theme('lightGreen')">light green</a>
+                            <a class="lt-bl" onclick="Theme('lightBlue')">light blue</a>
+                        </li>
+                        <li>
+                            <a class="dk-rd" onclick="Theme('darkRed')">dark red</a>
+                            <a class="dk-gn" onclick="Theme('darkGreen')">dark green</a>
+                            <a class="dk-bl" onclick="Theme('darkBlue')">dark blue</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#" class="tab"><i class="fa-solid fa-gear"></i><span>Settings</span></a></li>
+                <!-- <li><a href="./accountEntryPage.html" class="tab"><span>SignUp</span></a></li> -->
+            </ul>
+
+        </nav>
+
+
+        <nav id="sidenav">
+
+            <h1><a href="index.html" id="logo">SMHD</a></h1>
+
+            <ul class="tabList">
+                <li><a class="tab close" onclick="closeNav()"><i class="fa-solid fa-close"></i></a></li>
+                <li><a href="./index.html" class="tab">Home</a></li>
+                <li><a href="./aboutPage.html" class="tab">About</a></li>
+                <li><a href="./schedulePage.html" class="tab">Schedule</a></li>
+                <li><a href="./availActivPage.html" class="tab">AvailableActivities</a></li>
+                <hr>
+                <div class="userSide">
+                    <li class="dropdownBtn"><a class="tab"><i class="fa-regular fa-window-restore"></i>Theme</a>
+                        <ul class="dropdownMenu">
+                            <li>
+                                <a onclick="Theme('lightRed')">light red</a>
+                                <a onclick="Theme('lightGreen')">light green</a>
+                                <a onclick="Theme('lightBlue')">light blue</a>
+                                <a onclick="Theme('darkRed')">dark red</a>
+                                <a onclick="Theme('darkGreen')">dark green</a>
+                                <a onclick="Theme('darkBlue')">dark blue</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="tab"><i class="fa-solid fa-gear"></i><span>Settings</span></a></li>
+                    <!-- <li><a href="./accountEntryPage.html" class="tab">SignUp</a></li> -->
+                </div>
+            </ul>
+
+            <a id="openNavBtn" class="openList"><i class="fa-solid fa-bars"></i></a>
+
+        </nav>
+
+    </header>
+
+
+    <div class="container">
+
+        <div class="todo-container">
+            <h1>TO-DO</h1>
+            <input type="text" id="task-input" placeholder="Example: remember to drink water!">
+            <button id="add-task-btn">Add Task</button>
+            <ul id="task-list"></ul>
+        </div>
+
+        <div class="table-container">
+            <h1>This Week</h1>
+            <table id="weekly-table">
+                <thead>
+                    <tr>
+                        <th>Days</th>
+                        <th>Tasks</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Friday</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <h1>Next Week</h1>
+            <table id="weekly-table">
+                <thead>
+                    <tr>
+                        <th>Days</th>
+                        <th>Tasks</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Friday</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+
+    <footer>
+
+        <section class="upper-footer">
+            <div>
+                <h2><a href="./index.html">SMHD</a></h2>
+                <p>at <strong>Student's Mental Health Development</strong>, we are dedicated to empowering students by prioritizing mental health. We believe that mental well-being is just as crucial as academic success.</p>
+            </div>
+
+            <div>
+                <h3>Information:</h3>
+            <ul>
+                <li><a href="./aboutPage.html">About</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+            </div>
+
+            <div>
+                <h3>Contact:</h3>
+                <ul>
+                    <li><a href="mailto:helpcontactsmhd@gmail.com">Email: helpcontactsmhd@gmail.com</a></li>
+                </ul>
+            </div>
+            
+        </section>
+        <section class="lower-footer">
+            <p>&copy;Student's Mental Health Development 2024, All rights reserved.</p>
+        </section>
+
+    </footer>
+
+</body>
+    <script src="./js/schedulePageScript.js"></script>
+    <script src="./js/navScript.js"></script>
+</html>

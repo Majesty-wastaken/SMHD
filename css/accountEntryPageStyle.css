@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+    background-color: #aaa;
+    height: 90vh;
+}
+
+#sign-container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    height: 70vh;
+    width: 60%;
+    background-color: white;
+    border-radius: 25px;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#sign-container a{
+    text-decoration: none;
+    color: inherit;
+}
+
+#sign-container hr{
+    border: 1px solid #ddd;
+    width: 80%;
+    margin: 15px;
+}
+
+#sign-container .googleAccount{
+    color: #888;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 10px 25px;
+}
+
+#sign-container .googleAccount .fa-google{
+    color: #555;
+}
+
+#sign-container input{
+    background-color: transparent;
+    border: 1px solid #aaa;
+    width: 70%;
+    height: 30px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+
+#sign-container .or{
+    margin: 10px 0;
+    padding: 3px 6px;
+    border: 1px solid #888;
+    border-radius: 25px;
+}
+
+#sign-form, #log-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#sign-form form, #log-form form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#log-form{
+    display: none;
+}
+
+/* #sign-form{
+    display: none;
+} */
+
+
+
+
+@media (max-width: 800px) {
+    
+    body{
+        background-color: #fff;
+    }
+    
+    #sign-container{
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+    }
+}

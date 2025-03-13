@@ -1,0 +1,170 @@
+
+/* Main Section */
+
+#main-section{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    height: fit-content;
+    width: 80%;
+    color: var(--baseTextColor);
+    padding: 100px 0 50px 0;
+}
+
+#main-section img{
+    width: 400px;
+    margin-right: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 var(--baseOverColor);
+    cursor: pointer;
+    transition: 500ms ease;
+}
+
+#main-section img:hover{
+    box-shadow: 0 0 10px 0 var(--baseOverColor);
+    transform: scale(1.05);
+}
+
+#main-section .text-box{
+    width: 80%;
+}
+
+#main-section h1{
+    width: fit-content;
+    margin-bottom: 15px;
+}
+
+#main-section p{
+    width: 80%;
+}
+
+/* Features Section */
+
+#features-section{
+    height: fit-content;
+    background-color: var(--baseOverColor);
+    color: var(--navTextColor);
+    text-align: center;
+    justify-items: center;
+    padding: 50px 0;
+}
+
+.feature-box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 40%);
+    justify-content: center;
+}
+
+.feature-box{
+    margin: 25px;
+    padding: 25px 15px;
+    border: 1px solid var(--baseOv2Color);
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 var(--baseOv2Color);
+    cursor: pointer;
+    transition: 500ms ease;
+}
+
+.feature-box:hover{
+    box-shadow: 0 0 10px 0 var(--baseOv2Color);
+    transform: scale(1.02);
+}
+
+/* Footer */
+
+footer{
+    background-color: var(--baseBorderColor);
+    padding: 25px 0;
+    color: var(--footerTextColor);
+}
+
+footer .upper-footer{
+    width: 80%;
+    justify-self: center;
+    display: flex;
+    column-gap: 25px;
+}
+
+footer .upper-footer div{
+    margin: 0 25px;
+}
+
+footer .upper-footer div h3, .upper-footer div h2{
+    color: var(--baseOverColor);
+}
+
+footer .upper-footer a{
+    text-decoration: none;
+    color: inherit;
+}
+
+footer .upper-footer ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+
+footer .upper-footer ul li a:hover{
+    color: var(--baseOverColor);
+}
+
+footer .upper-footer div:first-child p{
+    width: 50%;
+}
+
+footer .lower-footer{
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+
+/* Responsive Style (below 1000px) */
+
+@media (max-width: 1000px) {
+    /* Main Section */
+
+    #main-section{
+        width: 90%;
+        padding: 50px 0;
+    }
+
+    #main-section img{
+        display: none;
+    }
+    
+    #main-section .text-box{
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Features Section */
+
+    #features-section{
+        padding: 50px 0;
+    }
+    
+    .feature-box-container{
+        grid-template-columns: repeat(1, 90%);
+    }
+
+    /* Footer */
+
+    footer{
+        padding: 5px 0;
+        text-align: center;
+    }
+    
+    footer .upper-footer{
+        width: 90%;
+        flex-direction: column;
+        row-gap: 25px;
+    }
+
+    footer .upper-footer div:first-child p{
+        width: 90%;
+        justify-self: center;
+    }
+}

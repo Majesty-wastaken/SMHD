@@ -1,0 +1,225 @@
+
+.container {
+    display: flex;
+    width: 90%;
+    height: fit-content;
+    padding: 100px 20px;
+    justify-self: center;
+    color: var(--baseTextColor);
+}
+
+.todo-container {
+    width: 25%;
+    height: 75vh;
+    padding: 20px;
+    border-radius: 5px 0 0 5px;
+    border-right: 1px solid var(--baseOverColor);
+    text-align: center;
+    box-shadow: 0 0 10px 0 var(--baseOverColor);
+    overflow-y: hidden;
+}
+
+.table-container {
+    width: 75%;
+    height: 75vh;
+    padding: 20px;
+    border-radius: 0 5px 5px 0;
+    border-left: 1px solid var(--baseOverColor);
+    text-align: center;
+    box-shadow: 0 0 10px 0 var(--baseOverColor);
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+#task-input {
+    font-family: inherit;
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--baseOv2Color);
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#task-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px 0 var(--baseOverColor);
+}
+
+#add-task-btn {
+    font-family: inherit;
+    padding: 10px 35px;
+    background-color: var(--baseOverColor);
+    color: var(--navTextColor);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-task-btn:hover {
+    background-color: var(--baseOv2Color);
+    box-shadow: 0 0 5px 0 var(--baseOverColor);
+}
+
+#task-list {
+    height: 500px;
+    margin: 10px 0;
+    list-style: none;
+    padding: 0;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+#task-list li {
+    background: var(--baseOverColor);
+    color: var(--navTextColor);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+#task-list li:hover {
+    background: var(--baseOv2Color);
+}
+
+#task-list li button {
+    background-color: transparent;
+    color: var(--navTextColor);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+#task-list li button:hover {
+    background: var(--navOverlay);
+}
+
+table {
+    border: 1px solid var(--baseOv2Color);
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 1px 0 var(--baseOverColor);
+}
+
+th {
+    background: var(--baseOverColor);
+    color: var(--navTextColor);
+    cursor: default;
+}
+
+td[contenteditable="true"] {
+    background: var(--baseColor);
+    cursor: pointer;
+}
+
+td:focus {
+    outline: var(--baseOverColor) dashed 1px;
+}
+
+/* Footer */
+
+footer{
+    background-color: var(--baseBorderColor);
+    padding: 25px 0;
+    color: var(--footerTextColor);
+}
+
+footer .upper-footer{
+    width: 80%;
+    justify-self: center;
+    display: flex;
+    column-gap: 25px;
+}
+
+footer .upper-footer div{
+    margin: 0 25px;
+}
+
+footer .upper-footer div h3, .upper-footer div h2{
+    color: var(--baseOverColor);
+}
+
+footer .upper-footer a{
+    text-decoration: none;
+    color: inherit;
+}
+
+footer .upper-footer ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+
+footer .upper-footer ul li a:hover{
+    color: var(--baseOverColor);
+}
+
+footer .upper-footer div:first-child p{
+    width: 50%;
+}
+
+footer .lower-footer{
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+
+/* Responsive Style (below 1000px) */
+
+@media (max-width: 1000px) {
+
+    .container {
+        width: 96%;
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .todo-container, .table-container {
+        width: 100%;
+        border-radius: 0;
+        border: none;
+    }
+
+    .todo-container {
+        border-bottom: 1px solid var(--baseOverColor);
+    }
+    
+    .table-container {
+        height: fit-content;
+        padding: 20px;
+        border-top: 1px solid var(--baseOverColor);
+        overflow-y: initial;
+    }
+
+    /* Footer */
+
+    footer{
+        padding: 5px 0;
+        text-align: center;
+    }
+    
+    footer .upper-footer{
+        width: 90%;
+        flex-direction: column;
+        row-gap: 25px;
+    }
+
+    footer .upper-footer div:first-child p{
+        width: 90%;
+        justify-self: center;
+    }
+}

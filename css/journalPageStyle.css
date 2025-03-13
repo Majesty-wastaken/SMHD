@@ -1,0 +1,209 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    width: 80%;
+    padding: 100px 20px;
+    gap: 20px;
+    /* flex-wrap: wrap; */
+    color: var(--baseTextColor);
+}
+
+.notebook {
+    width: 70%;
+    background-color: transparent;
+    transition: all 0.3s;
+    justify-self: center;
+}
+  
+.notebook.fade {
+    animation: fadeIn 0.4s ease;
+}
+  
+.notebook h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--primary-color);
+}
+  
+#note-content {
+    width: 90%;
+    height: 500px;
+    background-color: transparent;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 28px,
+        var(--navOverlay) 29px
+    );
+    border-radius: 2px;
+    padding: 10px 15px;
+    font-size: 16px;
+    line-height: 30px;
+    resize: none;
+    color: var(--baseTextColor);
+    box-shadow: 0 4px 10px var(--navOverlay);
+}
+
+#note-content:focus {
+    outline: none;
+}
+
+.counter, #download-pdf {
+    display: none;
+}
+
+.task-list {
+    width: 20%;
+    background-color: transparent;
+    border: 1px solid var(--baseBorderColor);
+    border-radius: 2px;
+    padding: 20px;
+    box-shadow: 0 4px 10px var(--navOverlay);
+    transition: all 0.3s;
+}
+
+.task-list h2 {
+    text-align: center;
+}
+
+#add-btn {
+    width: 100%;
+    background-color: var(--baseOverColor);
+    color: var(--navTextColor);
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#add-btn:hover {
+    background-color: var(--baseOv2Color);
+    transform: Scale(1.01);
+}
+
+#page-buttons button {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    color: var(--baseTextColor);
+    border: 1px solid var(--baseOverColor);
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#page-buttons button:hover {
+    background-color: var(--navOverlay);
+    transform: scale(1.01);
+}
+
+#page-buttons button.selected{
+    background-color: var(--baseOverColor);
+    color: var(--navTextColor);
+    border: 1px solid var(--baseBorderColor);
+}
+
+#page-buttons button.deleted {
+    background-color: #e74c3c !important;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer */
+
+footer{
+    background-color: var(--baseBorderColor);
+    padding: 25px 0;
+    color: var(--footerTextColor);
+}
+
+footer .upper-footer{
+    width: 80%;
+    justify-self: center;
+    display: flex;
+    column-gap: 25px;
+}
+
+footer .upper-footer div{
+    margin: 0 25px;
+}
+
+footer .upper-footer div h3, .upper-footer div h2{
+    color: var(--baseOverColor);
+}
+
+footer .upper-footer a{
+    text-decoration: none;
+    color: inherit;
+}
+
+footer .upper-footer ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+
+footer .upper-footer ul li a:hover{
+    color: var(--baseOverColor);
+}
+
+footer .upper-footer div:first-child p{
+    width: 50%;
+}
+
+footer .lower-footer{
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* Responsive Style (below 1000px) */
+
+@media (max-width: 1000px) {
+
+    .container {
+        flex-direction: column;
+        width: 90%;
+        align-items: center;
+        justify-self: center;
+    }
+
+    #note-content {
+        width: 100%;
+        justify-self: center
+        ;
+    }
+    
+    .task-list {
+        width: 50%;
+        justify-self: center;
+    }
+
+    /* Footer */
+
+    footer{
+        padding: 5px 0;
+        text-align: center;
+    }
+    
+    footer .upper-footer{
+        width: 90%;
+        flex-direction: column;
+        row-gap: 25px;
+    }
+
+    footer .upper-footer div:first-child p{
+        width: 90%;
+        justify-self: center;
+    }
+}
